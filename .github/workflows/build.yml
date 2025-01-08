@@ -1,0 +1,27 @@
+---
+name: Build
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build deplyoment script
+        run: bash build.sh
+
+      - name: Check deplyoment script
+        run: cat dist/grab.sh
+
+      - name: Update Nightly Release
+        uses: andelf/nightly-release@main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: main
+          name: "Nightly Release $$"
+          prerelease: false
+          body: "```curl -LsS https://github.com/kism/zy.css/releases/download/main/grab.sh | bash```"
+          files: dist/grab.sh

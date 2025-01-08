@@ -1,0 +1,23 @@
+{
+  "name": "zy.css",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kism/zy.css.git"
+  },
+  "author": "Kieran Gee",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kism/zy.css/issues"
+  },
+  "homepage": "https://github.com/kism/zy.css#readme",
+  "description": "",
+  "devDependencies": {
+    "stylelint": "^16.6.1",
+    "stylelint-config-standard": "^36.0.0"
+  }
+}

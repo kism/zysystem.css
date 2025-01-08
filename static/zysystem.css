@@ -1,0 +1,371 @@
+/* F O N T S */
+
+@font-face {
+  font-family: 'Chicago'; /* Headings */
+  font-style: normal;
+  font-weight: 700;
+  src:
+    local(''),
+    url('/static/fonts/Chicago.woff2') format('woff2');
+}
+
+@font-face { /* Content */
+  font-family: 'Geneva';
+  font-style: normal;
+  font-weight: 400;
+  src:
+    local(''),
+    url('/static/fonts/Geneva.woff2') format('woff2');
+}
+
+
+@font-face { /* Monospace */
+  font-family: 'Monaco';
+  font-style: normal;
+  font-weight: 400;
+  src:
+    local(''),
+    url('/static/fonts/Monaco.woff2') format('woff2');
+}
+
+/* A C T U A L  C S S */
+
+
+:root {
+  /* Base Tokens */
+  --sys-color-white: #FFFFFF;
+  --sys-color-black: #000000;
+  --sys-color-grey: #A5A5A5;
+  --sys-color-darkgrey: #B6B7B8;
+
+  /* Theme Tokens */
+  --primary: var(--sys-color-white);
+  --secondary: var(--sys-color-black);
+  --tertiary: var(--sys-color-grey);
+
+  /* Component Tokens */
+  --disabled: var(--sys-color-darkgrey);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --primary: var(--sys-color-black);
+    --secondary: var(--sys-color-white);
+    --tertiary: var(--sys-color-darkgrey);
+    --disabled: var(--sys-color-grey);
+  }
+}
+
+@media screen and (width <= 430px) {
+  body {
+    padding-left: 4px !important;
+    padding-right: 4px !important;
+  }
+}
+
+body {
+  font-family:
+    'Geneva',
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    'Helvetica Neue',
+    Arial,
+    sans-serif,
+    'Apple Color Emoji',
+    'Segoe UI Emoji',
+    'Segoe UI Symbol';
+  font-size: 14px;
+  background-color: var(--primary);
+  color: var(--secondary);
+  line-height: 1.5;
+  padding-left: 15px;
+  padding-right: 15px;
+  max-width: 700px;
+}
+
+body.non-contained {
+  max-width: 100% !important;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid var(--primary);
+  display: block;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  width: 100%;
+  box-sizing: content-box;
+  height: 0;
+  overflow: visible;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Chicago', Consolas, 'Lucida Console', monospace;
+  line-height: 1.2;
+  color: var(--secondary);
+}
+
+h1 {
+  font-size: 40px;
+  margin: 16px 0 8px;
+}
+
+h2 {
+  font-size: 28px;
+  margin: 14px 0 8px;
+}
+
+h3 {
+  font-size: 24px;
+  margin: 12px 0 8px;
+  font-style: italic;
+}
+
+h4 {
+  font-size: 16px;
+  margin: 12px 0 8px;
+}
+
+h5 {
+  font-style: italic;
+  font-size: 14px;
+  margin: 12px 0 8px;
+}
+
+h6 {
+  font-size: 12px;
+  margin: 12px 0 8px;
+}
+
+p {
+  margin: 0;
+  margin-bottom: 16px;
+  margin-top: 0px;
+}
+
+ul,
+ol {
+  margin-top: 10px;
+  margin-bottom: 8px;
+  padding-left: 40px;
+}
+
+table {
+  margin-bottom: 16px;
+}
+
+h1 + table,
+h2 + table,
+h3 + table,
+h4 + table,
+h5 + table,
+h6 + table {
+  margin-top: +10px;
+}
+
+dl {
+  margin-bottom: 16px;
+}
+
+dd {
+  margin-left: 40px;
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+  vertical-align: baseline;
+}
+
+code,
+pre {
+  font-family: 'Monaco', 'Consolas', 'Lucida Console', monospace;
+  font-size: 13px;
+  line-height: inherit;
+  margin: 0;
+  padding: 0;
+  vertical-align: baseline;
+  word-break: break-all;
+  word-wrap: break-word;
+  background-color: var(--tertiary);
+  display: inline-block;
+  padding: 0px 4px;
+}
+
+.code-block {
+  display: block;
+  max-width: 100%;
+  width: fit-content;
+  padding: 2px 10px;
+  margin: 3px 0;
+}
+
+embed,
+iframe,
+video {
+  border: 0;
+}
+
+small {
+  vertical-align: bottom;
+}
+
+footer {
+  font-size: smaller;
+  margin: 20px 0 16px;
+}
+
+footer p {
+  margin-bottom: 0;
+}
+
+u {
+  text-decoration: underline;
+}
+
+s {
+  text-decoration: line-through;
+}
+
+sup {
+  font-size: 14px;
+  vertical-align: super;
+}
+
+sub {
+  font-size: 14px;
+  vertical-align: sub;
+}
+
+mark {
+  background: var(--tertiary);
+}
+
+a:link {
+  color: var(--secondary);
+}
+
+a:hover,
+a:focus {
+  text-decoration: none;
+}
+
+a:visited {
+  color: var(--secondary);
+}
+
+tr {
+  border-bottom: 2px solid var(--secondary);
+  margin-bottom: 8px;
+}
+
+thead tr {
+  border-bottom: 1px solid var(--secondary);
+  background: var(--secondary);
+}
+
+thead tr th {
+  color: var(--primary);
+}
+
+caption {
+  padding: 8px 0;
+}
+
+th,
+td {
+  border-bottom: 1px solid var(--secondary);
+  padding: 16px;
+  vertical-align: inherit;
+}
+
+thead th {
+  color: var(--primary)
+  border: 0;
+  border-bottom: 2px solid var(--primary);
+  text-align: left;
+}
+
+tfoot tr {
+  text-align: left;
+}
+
+tfoot td {
+  font-size: 8px;
+  font-style: italic;
+  padding: 16px 4px;
+}
+
+::selection {
+  color: var(--primary);
+  background: var(--secondary);
+}
+
+strong {
+  font-weight: 400;
+}
+
+em, i {
+  font-style: normal;
+}
+
+del {
+  text-decoration: line-through;
+  text-decoration-thickness: 2px;
+}
+
+
+/* Ruining the classless dream */
+@media (width >= 400px) {
+  .container {
+    width: 85%;
+    padding: 0;
+  }
+}
+
+@media (width >= 550px) {
+  .container {
+    width: 80%;
+  }
+
+  .column,
+  .columns {
+    margin-left: 4%;
+  }
+
+  .column:first-child,
+  .columns:first-child {
+    margin-left: 0;
+  }
+
+  .one-half.column {
+    width: 48%;
+  }
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.column,
+.columns {
+  width: 100%;
+  float: left;
+  box-sizing: border-box;
+}
+
+.row {
+  max-width: 100%;
+}
