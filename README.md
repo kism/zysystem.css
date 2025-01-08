@@ -6,6 +6,8 @@ Kieran's minimal and almost classless CSS, based on system.css
 
 * Kinda Mac like
 
+<https://sakofchit.github.io/system.css/>
+
 ### Todo
 
 * <https://web.archive.org/web/20230319011535/https://vistaserv.net/blog/90s-fonts-modern-browsers>
