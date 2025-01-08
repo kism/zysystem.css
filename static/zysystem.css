@@ -32,6 +32,8 @@
 
 
 :root {
+  --box-shadow: 2px 2px;
+
   /* Base Tokens */
   --sys-color-white: #FFFFFF;
   --sys-color-black: #000000;
@@ -45,6 +47,10 @@
 
   /* Component Tokens */
   --disabled: var(--sys-color-darkgrey);
+
+  background: linear-gradient(90deg, var(--primary) 21px, transparent 1%) center, linear-gradient(var(--primary) 21px, transparent 1%) center, var(--secondary);
+  background-size: 22px 22px;
+  background-attachment: fixed;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -80,9 +86,18 @@ body {
   background-color: var(--primary);
   color: var(--secondary);
   line-height: 1.5;
-  padding-left: 15px;
-  padding-right: 15px;
-  max-width: 700px;
+  max-width: 800px;
+
+  border: 2px solid;
+  padding: 10px;
+  box-shadow: var(--box-shadow);
+  background-color: var(--primary);
+
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 30px;
+
 }
 
 body.non-contained {
@@ -114,12 +129,13 @@ h6 {
 
 h1 {
   font-size: 40px;
-  margin: 16px 0 8px;
+  margin: 12px 0 8px;
+  text-align: center;
 }
 
 h2 {
   font-size: 28px;
-  margin: 14px 0 8px;
+  margin: 12px 0 8px;
 }
 
 h3 {
