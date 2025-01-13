@@ -48,6 +48,8 @@
   /* Component Tokens */
   --disabled: var(--sys-color-darkgrey);
 
+  --standard-border-radius: 0px;
+
   background: linear-gradient(90deg, var(--primary) 21px, transparent 1%) center, linear-gradient(var(--primary) 21px, transparent 1%) center, var(--secondary);
   background-size: 22px 22px;
   background-attachment: fixed;
@@ -387,4 +389,140 @@ del {
 
 .row {
   max-width: 100%;
+}
+
+/* Basic styles for checkboxes */
+
+/* Format forms */
+textarea,
+select,
+input,
+button,
+.button {
+  font-size: inherit;
+  font-family: inherit;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  border-radius: var(--standard-border-radius);
+  box-shadow: none;
+  max-width: 100%;
+  display: inline-block;
+}
+textarea,
+select,
+input {
+  color: var(--secondary);
+  background-color: var(--secondary);
+  border: 0px;
+}
+label {
+  display: block;
+}
+textarea:not([cols]) {
+  width: 100%;
+}
+
+/* Add arrow to drop-down */
+select:not([multiple]) {
+  background-image: linear-gradient(45deg, transparent 49%, var(--secondary) 51%),
+    linear-gradient(135deg, var(--secondary) 51%, transparent 49%);
+  background-position: calc(100% - 15px), calc(100% - 10px);
+  background-size: 5px 5px, 5px 5px;
+  background-repeat: no-repeat;
+  padding-inline-end: 25px;
+}
+*[dir="rtl"] select:not([multiple]) {
+  background-position: 10px, 15px;
+}
+
+
+/* checkbox and radio button style */
+textarea,
+select,
+input,
+progress {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  vertical-align: middle;
+  position: relative;
+  width: min-content;
+}
+
+input[type="checkbox"] + label,
+input[type="radio"] + label {
+  display: inline-block;
+}
+
+input[type="radio"] {
+  border-radius: 100%;
+}
+
+input[type="checkbox"]:checked,
+input[type="radio"]:checked {
+  background-color: var(--tertiary);
+}
+
+input[type="checkbox"]:checked::after {
+  /* Creates a rectangle with colored right and bottom borders which is rotated to look like a check mark */
+  content: " ";
+  width: 0.18em;
+  height: 0.32em;
+  border-radius: var(--standard-border-radius);
+  position: absolute;
+  top: 0.05em;
+  left: 0.17em;
+  background-color: transparent;
+  border-right: solid var(--primary) 0.08em;
+  border-bottom: solid var(--primary) 0.08em;
+  font-size: 1.8em;
+  transform: rotate(45deg);
+}
+input[type="radio"]:checked::after {
+  /* creates a colored circle for the checked radio button  */
+  content: " ";
+  width: 0.25em;
+  height: 0.25em;
+  border-radius: 100%;
+  position: absolute;
+  top: 0.125em;
+  background-color: var(--primary);
+  left: 0.125em;
+  font-size: 32px;
+}
+
+/* Progress bars */
+/* Declarations are repeated because you */
+/* cannot combine vendor-specific selectors */
+progress {
+  width: 100%;
+}
+
+progress:indeterminate {
+  background-color: var(--tertiary);
+}
+
+progress::-webkit-progress-bar {
+  border-radius: var(--standard-border-radius);
+  background-color: var(--secondary);
+}
+
+progress::-webkit-progress-value {
+  border-radius: var(--standard-border-radius);
+  background-color: var(--tertiary);
+}
+
+progress::-moz-progress-bar {
+  border-radius: var(--standard-border-radius);
+  background-color: var(--primary);
+  transition-property: width;
+  transition-duration: 0.3s;
+}
+
+progress:indeterminate::-moz-progress-bar {
+  background-color: var(--secondary);
 }
