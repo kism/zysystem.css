@@ -175,19 +175,6 @@ ol {
   padding-left: 40px;
 }
 
-table {
-  margin-bottom: 16px;
-}
-
-h1 + table,
-h2 + table,
-h3 + table,
-h4 + table,
-h5 + table,
-h6 + table {
-  margin-top: +10px;
-}
-
 dl {
   margin-bottom: 16px;
 }
@@ -278,14 +265,31 @@ a:visited {
   color: var(--secondary);
 }
 
+/* Tables */
+
+table {
+  border-collapse: collapse;
+  margin-bottom: 16px;
+  box-shadow: var(--box-shadow);
+}
+
+h1 + table,
+h2 + table,
+h3 + table,
+h4 + table,
+h5 + table,
+h6 + table {
+  margin-top: 10px;
+}
+
 tr {
-  border-bottom: 2px solid var(--secondary);
+  /* border-bottom: 2px solid var(--border-colour); */
   margin-bottom: 8px;
 }
 
 thead tr {
-  border-bottom: 1px solid var(--secondary);
-  background: var(--secondary);
+  /* border-bottom: 1px solid var(--border-colour); */
+  background: var(--tertiary);
 }
 
 caption {
@@ -293,18 +297,22 @@ caption {
 }
 
 td {
-  border-bottom: 1px solid var(--secondary);
   padding: 16px;
   vertical-align: inherit;
 }
 
+td,
+th {
+  border: 2px solid var(--border-colour);
+  text-align: start;
+  padding: 0.5rem;
+}
+
 thead tr th {
-  padding: 16px;
+  padding: 10px 4px;
   vertical-align: inherit;
   color: var(--primary);
-  border: 0;
-  border-bottom: 2px solid var(--primary);
-  text-align: left;
+  text-align: center;
 }
 
 tfoot tr {
@@ -314,7 +322,7 @@ tfoot tr {
 tfoot td {
   font-size: 8px;
   font-style: italic;
-  padding: 16px 4px;
+  padding: 10px 4px;
 }
 
 ::selection {
@@ -593,4 +601,3 @@ dialog {
   border-radius: var(--standard-border-radius);
   margin-bottom: 1rem;
 }
-
