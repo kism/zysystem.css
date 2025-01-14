@@ -8,13 +8,11 @@
 
   <body>
     <h1>Welcome</h1>
-    <button id="theme-toggle">Toggle Theme</button>
     <p>
-      I was struggling to make a simple page I was building look decent. I knew there were stylesheets just used
-      'semantic html' (like Tufte) and didn't require any special className (i.e
-      <code>&ltbutton class="btn-primary"&gt;a button&lt;/button&gt;</code>), however I was struggling to find them.
+      I ripped this css off Paul Kilan, the original is
+      <a href="https://github.com/PaulKinlan/classless-css-demo">Here</a>, the goal is to test classless css. </p><p>I have some basic javascript to toggle light/dark mode, the page will load with your system default.
     </p>
-
+    <button id="theme-toggle">Toggle Theme</button>
     <h2>Typography:</h2>
     <h1>This is a H1 heading</h1>
     <h2>This is a H2 heading</h2>
@@ -112,9 +110,8 @@
     </fieldset>
     <br />
     <button>Button</button>
-    <a href="javascript:void(0)" role="button">Anchor role=button</a>
     <input type="button" value="Input type=button" />
-    <button disabled="">Button</button>
+    <button disabled="">Button (Disabled)</button>
     <br />
     <label>Progress bar</label>
     <progress value="22" max="100"></progress>
@@ -183,24 +180,23 @@
     </table>
   </body>
 
-
   <script>
-    const toggleButton = document.getElementById('theme-toggle');
-    const userPreferenceKey = 'theme-preference';
+    const toggleButton = document.getElementById("theme-toggle");
+    const userPreferenceKey = "theme-preference";
 
     // Set the theme based on user preference or system preference
     function applyTheme(theme) {
-      if (theme === 'dark') {
-        document.documentElement.classList.add('dark');
-        document.documentElement.classList.remove('light');
-      } else if (theme === 'light') {
-        document.documentElement.classList.add('light');
-        document.documentElement.classList.remove('dark');
+      if (theme === "dark") {
+        document.documentElement.classList.add("dark");
+        document.documentElement.classList.remove("light");
+      } else if (theme === "light") {
+        document.documentElement.classList.add("light");
+        document.documentElement.classList.remove("dark");
       } else {
         // Follow system preference
-        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        document.documentElement.classList.toggle('dark', prefersDark);
-        document.documentElement.classList.toggle('light', !prefersDark);
+        const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        document.documentElement.classList.toggle("dark", prefersDark);
+        document.documentElement.classList.toggle("light", !prefersDark);
       }
     }
 
@@ -209,19 +205,18 @@
     applyTheme(savedTheme);
 
     // Toggle theme on button click
-    toggleButton.addEventListener('click', () => {
-      const currentTheme = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
-      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    toggleButton.addEventListener("click", () => {
+      const currentTheme = document.documentElement.classList.contains("dark") ? "dark" : "light";
+      const newTheme = currentTheme === "dark" ? "light" : "dark";
       applyTheme(newTheme);
       localStorage.setItem(userPreferenceKey, newTheme);
     });
 
     // React to system preference changes
-    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+    window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", (e) => {
       if (!localStorage.getItem(userPreferenceKey)) {
         applyTheme();
       }
     });
   </script>
-
 </html>
