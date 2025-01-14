@@ -3,11 +3,12 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "stylelint 'static/*.css'"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kism/zy.css.git"
+    "url": "git+https://github.com/kism/zysystem.css.git"
   },
   "author": "Kieran Gee",
   "license": "ISC",

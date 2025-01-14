@@ -1,44 +1,38 @@
 /* F O N T S */
 
 @font-face {
-  font-family: 'Chicago'; /* Headings */
+  font-family: Chicago; /* Headings */
   font-style: normal;
   font-weight: 700;
-  src:
-    local(''),
-    url('/static/fonts/Chicago.woff2') format('woff2');
+  src: local(""), url("/static/fonts/Chicago.woff2") format("woff2");
 }
 
-@font-face { /* Content */
-  font-family: 'Geneva';
+@font-face {
+  /* Content */
+  font-family: Geneva;
   font-style: normal;
   font-weight: 400;
-  src:
-    local(''),
-    url('/static/fonts/Geneva.woff2') format('woff2');
+  src: local(""), url("/static/fonts/Geneva.woff2") format("woff2");
 }
 
-
-@font-face { /* Monospace */
-  font-family: 'Monaco';
+@font-face {
+  /* Monospace */
+  font-family: Monaco;
   font-style: normal;
   font-weight: 400;
-  src:
-    local(''),
-    url('/static/fonts/Monaco.woff2') format('woff2');
+  src: local(""), url("/static/fonts/Monaco.woff2") format("woff2");
 }
 
 /* A C T U A L  C S S */
-
 
 :root {
   --box-shadow: 2px 2px;
 
   /* Base Tokens */
-  --sys-color-white: #FFFFFF;
-  --sys-color-black: #000000;
-  --sys-color-grey: #A5A5A5;
-  --sys-color-darkgrey: #B6B7B8;
+  --sys-color-white: #fff;
+  --sys-color-black: #000;
+  --sys-color-grey: #a5a5a5;
+  --sys-color-darkgrey: #b6b7b8;
 
   /* Theme Tokens */
   --primary: var(--sys-color-white);
@@ -50,10 +44,10 @@
   --text-box-bg: var(--sys-color-white);
   --text-box-fg: var(--sys-color-black);
   --border-colour: var(--secondary);
-
   --standard-border-radius: 0px;
 
-  background: linear-gradient(90deg, var(--primary) 21px, transparent 1%) center, linear-gradient(var(--primary) 21px, transparent 1%) center, var(--secondary);
+  background: linear-gradient(90deg, var(--primary) 21px, transparent 1%) center,
+    linear-gradient(var(--primary) 21px, transparent 1%) center, var(--secondary);
   background-size: 22px 22px;
   background-attachment: fixed;
 }
@@ -77,34 +71,17 @@
 }
 
 body {
-  font-family:
-    'Geneva',
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    'Helvetica Neue',
-    Arial,
-    sans-serif,
-    'Apple Color Emoji',
-    'Segoe UI Emoji',
-    'Segoe UI Symbol';
+  font-family: Geneva, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-size: 14px;
   background-color: var(--primary);
   color: var(--secondary);
   line-height: 1.5;
   max-width: 800px;
-
   border: 2px solid var(--border-colour);
   padding: 10px;
   box-shadow: var(--box-shadow);
-  background-color: var(--primary);
-
-  margin-top: 30px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 30px;
-
+  margin: 30px auto;
 }
 
 body.non-contained {
@@ -129,7 +106,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Chicago', Consolas, 'Lucida Console', monospace;
+  font-family: Chicago, Consolas, "Lucida Console", monospace;
   line-height: 1.2;
   color: var(--secondary);
 }
@@ -171,9 +148,7 @@ h6 {
 }
 
 p {
-  margin: 0;
-  margin-bottom: 16px;
-  margin-top: 0px;
+  margin: 0, 0, 16px, 0;
 }
 
 ul,
@@ -212,17 +187,16 @@ img {
 
 code,
 pre {
-  font-family: 'Monaco', 'Consolas', 'Lucida Console', monospace;
+  font-family: Monaco, Consolas, "Lucida Console", monospace;
   font-size: 13px;
   line-height: inherit;
   margin: 0;
-  padding: 0;
   vertical-align: baseline;
   word-break: break-all;
   word-wrap: break-word;
   background-color: var(--tertiary);
   display: inline-block;
-  padding: 0px 4px;
+  padding: 0 4px;
 }
 
 .code-block {
@@ -297,23 +271,20 @@ thead tr {
   background: var(--secondary);
 }
 
-thead tr th {
-  color: var(--primary);
-}
-
 caption {
   padding: 8px 0;
 }
 
-th,
 td {
   border-bottom: 1px solid var(--secondary);
   padding: 16px;
   vertical-align: inherit;
 }
 
-thead th {
-  color: var(--primary)
+thead tr th {
+  padding: 16px;
+  vertical-align: inherit;
+  color: var(--primary);
   border: 0;
   border-bottom: 2px solid var(--primary);
   text-align: left;
@@ -338,7 +309,8 @@ strong {
   font-weight: 400;
 }
 
-em, i {
+em,
+i {
   font-style: normal;
 }
 
@@ -346,7 +318,6 @@ del {
   text-decoration: line-through;
   text-decoration-thickness: 2px;
 }
-
 
 /* Ruining the classless dream */
 @media (width >= 400px) {
@@ -398,49 +369,6 @@ del {
 
 /* Basic styles for checkboxes */
 
-/* Format forms */
-textarea,
-select,
-input,
-button,
-.button {
-  font-size: inherit;
-  font-family: inherit;
-  padding: 0.5rem;
-  margin-bottom: 0.5rem;
-  border-radius: var(--standard-border-radius);
-  box-shadow: none;
-  max-width: 100%;
-  display: inline-block;
-}
-textarea,
-select,
-input {
-  color: var(--text-box-fg);
-  background-color: var(--text-box-bg);
-  border: 1px solid var(--secondary);
-}
-label {
-  display: block;
-}
-textarea:not([cols]) {
-  width: 100%;
-}
-
-/* Add arrow to drop-down */
-select:not([multiple]) {
-  background-image: linear-gradient(45deg, transparent 49%, var(--secondary) 51%),
-    linear-gradient(135deg, var(--secondary) 51%, transparent 49%);
-  background-position: calc(100% - 15px), calc(100% - 10px);
-  background-size: 5px 5px, 5px 5px;
-  background-repeat: no-repeat;
-  padding-inline-end: 25px;
-}
-*[dir="rtl"] select:not([multiple]) {
-  background-position: 10px, 15px;
-}
-
-
 /* checkbox and radio button style */
 textarea,
 select,
@@ -469,7 +397,7 @@ input[type="radio"] {
 
 input[type="checkbox"]:checked,
 input[type="radio"]:checked {
-  background-color: var(--tertiary);
+  background-color: var(--secondary);
 }
 
 input[type="checkbox"]:checked::after {
@@ -487,6 +415,7 @@ input[type="checkbox"]:checked::after {
   font-size: 1.8em;
   transform: rotate(45deg);
 }
+
 input[type="radio"]:checked::after {
   /* creates a colored circle for the checked radio button  */
   content: " ";
@@ -500,9 +429,53 @@ input[type="radio"]:checked::after {
   font-size: 32px;
 }
 
-/* Progress bars */
-/* Declarations are repeated because you */
-/* cannot combine vendor-specific selectors */
+/* Format forms */
+textarea,
+select,
+input,
+button,
+.button {
+  font-size: inherit;
+  font-family: inherit;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  border-radius: var(--standard-border-radius);
+  box-shadow: none;
+  max-width: 100%;
+  display: inline-block;
+}
+
+textarea,
+select,
+input {
+  color: var(--text-box-fg);
+  background-color: var(--text-box-bg);
+  border: 1px solid var(--secondary);
+}
+
+label {
+  display: block;
+}
+
+textarea:not([cols]) {
+  width: 100%;
+}
+
+/* Add arrow to drop-down */
+select:not([multiple]) {
+  background-image: linear-gradient(45deg, transparent 49%, var(--secondary) 51%),
+    linear-gradient(135deg, var(--secondary) 51%, transparent 49%);
+  background-position: calc(100% - 15px), calc(100% - 10px);
+  background-size: 5px 5px, 5px 5px;
+  background-repeat: no-repeat;
+  padding-inline-end: 25px;
+}
+
+*[dir="rtl"] select:not([multiple]) {
+  background-position: 10px, 15px;
+}
+
+/* Progress bars, Declarations are repeated because you cannot combine vendor-specific selectors */
 progress {
   width: 100%;
 }
@@ -590,18 +563,17 @@ input[type="button"]:enabled:hover {
 
 .button:focus-visible,
 button:focus-visible:where(:enabled),
-input:enabled:focus-visible:where(
-  [type="submit"],
-  [type="reset"],
-  [type="button"]
-) {
+input:enabled:focus-visible:where([type="submit"], [type="reset"], [type="button"]) {
   outline: 2px solid var(--tertiary);
   outline-offset: 1px;
 }
 
-article, fieldset, dialog {
+article,
+fieldset,
+dialog {
   border: 1px solid var(--border-colour);
   padding: 1rem;
   border-radius: var(--standard-border-radius);
   margin-bottom: 1rem;
 }
+
