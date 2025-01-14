@@ -23,5 +23,5 @@ jobs:
           tag_name: main
           name: "Nightly Release $$"
           prerelease: false
-          body: "```curl -LsS https://github.com/kism/zy.css/releases/download/main/grab.sh | bash```"
+          body: "```curl -LsS https://github.com/kism/zysystem.css/releases/download/main/grab.sh | bash```"
           files: dist/grab.sh
