@@ -2,6 +2,8 @@
 
 Kieran's minimal and almost classless CSS, based on system.css
 
+Demo: <https://kism.github.io/zysystem.css/demo.html>
+
 ## Goals
 
 * Kinda Mac like
