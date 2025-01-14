@@ -408,10 +408,6 @@ progress {
   -moz-appearance: none;
 }
 
-label {
-  display: block;
-}
-
 input[type="checkbox"],
 input[type="radio"] {
   vertical-align: middle;
