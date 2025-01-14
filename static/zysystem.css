@@ -44,6 +44,7 @@
   --text-box-bg: var(--sys-color-white);
   --text-box-fg: var(--sys-color-black);
   --border-colour: var(--secondary);
+  --border-thickness: 2px;
   --standard-border-radius: 0px;
 
   background: linear-gradient(90deg, var(--primary) 21px, transparent 1%) center,
@@ -84,6 +85,7 @@
   body {
     padding-left: 4px !important;
     padding-right: 4px !important;
+    /* margin: 0 auto !important; */
   }
 }
 
@@ -95,10 +97,11 @@ body {
   color: var(--secondary);
   line-height: 1.5;
   max-width: 800px;
-  border: 2px solid var(--border-colour);
+  border: var(--border-thickness) solid var(--border-colour);
   padding: 10px;
   box-shadow: var(--box-shadow);
   margin: 30px auto;
+  box-sizing: border-box;
 }
 
 body.non-contained {
@@ -107,7 +110,7 @@ body.non-contained {
 
 hr {
   border: 0;
-  border-top: 1px solid var(--primary);
+  border-top: 2px solid var(--secondary);
   display: block;
   margin-top: 16px;
   margin-bottom: 16px;
@@ -303,7 +306,7 @@ td {
 
 td,
 th {
-  border: 2px solid var(--border-colour);
+  border: var(--border-thickness) solid var(--border-colour);
   text-align: start;
   padding: 0.5rem;
 }
@@ -475,7 +478,17 @@ select,
 input {
   color: var(--text-box-fg);
   background-color: var(--text-box-bg);
-  border: 1px solid var(--secondary);
+  border: var(--border-thickness) solid var(--secondary);
+}
+
+/* not working */
+textarea:focus,
+select:focus,
+input:focus {
+  color: var(--text-box-fg);
+  background-color: var(--text-box-bg);
+  border: var(--border-thickness) solid var(--secondary);
+  border-radius: var(--standard-border-radius);
 }
 
 label {
@@ -546,7 +559,7 @@ a.button, /* extra specificity to override a */
 input[type="submit"],
 input[type="reset"],
 input[type="button"] {
-  border: 1px solid var(--secondary);
+  border: var(--border-thickness) solid var(--secondary);
   background-color: var(--primary);
   color: var(--secondary);
   padding: 0.5rem 0.9rem;
@@ -596,7 +609,7 @@ input:enabled:focus-visible:where([type="submit"], [type="reset"], [type="button
 article,
 fieldset,
 dialog {
-  border: 1px solid var(--border-colour);
+  border: var(--border-thickness) solid var(--border-colour);
   padding: 1rem;
   border-radius: var(--standard-border-radius);
   margin-bottom: 1rem;
