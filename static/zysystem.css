@@ -102,6 +102,7 @@ body {
   box-shadow: var(--box-shadow);
   margin: 30px auto;
   box-sizing: border-box;
+  cursor: url('cursor.svg') 16 16, auto;
 }
 
 body.non-contained {
@@ -407,6 +408,10 @@ progress {
   -moz-appearance: none;
 }
 
+label {
+  display: block;
+}
+
 input[type="checkbox"],
 input[type="radio"] {
   vertical-align: middle;
@@ -479,20 +484,18 @@ input {
   color: var(--text-box-fg);
   background-color: var(--text-box-bg);
   border: var(--border-thickness) solid var(--secondary);
+  border-radius: var(--standard-border-radius);
+  box-shadow: none;
+  outline: none;
 }
 
-/* not working */
 textarea:focus,
 select:focus,
 input:focus {
-  color: var(--text-box-fg);
-  background-color: var(--text-box-bg);
-  border: var(--border-thickness) solid var(--secondary);
+  border-color: var(--tertiary);
   border-radius: var(--standard-border-radius);
-}
-
-label {
-  display: block;
+  box-shadow: none;
+  outline: none;
 }
 
 textarea:not([cols]) {
