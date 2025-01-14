@@ -49,6 +49,7 @@
   --disabled: var(--sys-color-darkgrey);
   --text-box-bg: var(--sys-color-white);
   --text-box-fg: var(--sys-color-black);
+  --border-colour: var(--secondary);
 
   --standard-border-radius: 0px;
 
@@ -94,7 +95,7 @@ body {
   line-height: 1.5;
   max-width: 800px;
 
-  border: 2px solid;
+  border: 2px solid var(--border-colour);
   padding: 10px;
   box-shadow: var(--box-shadow);
   background-color: var(--primary);
@@ -529,4 +530,78 @@ progress::-moz-progress-bar {
 
 progress:indeterminate::-moz-progress-bar {
   background-color: var(--secondary);
+}
+
+/* Format links & buttons */
+a,
+a:visited {
+  color: var(--accent);
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+button,
+.button,
+a.button, /* extra specificity to override a */
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+  border: 1px solid var(--secondary);
+  background-color: var(--primary);
+  color: var(--secondary);
+  padding: 0.5rem 0.9rem;
+  text-decoration: none;
+  line-height: normal;
+}
+
+.button[aria-disabled="true"],
+input:disabled,
+textarea:disabled,
+select:disabled,
+button[disabled] {
+  cursor: not-allowed;
+  background-color: var(--disabled);
+  border-color: var(--disabled);
+  color: var(--primary);
+}
+
+input[type="range"] {
+  padding: 0;
+}
+
+/* Set the cursor to '?' on an abbreviation and style the abbreviation to show that there is more information underneath */
+abbr[title] {
+  cursor: help;
+  text-decoration-line: underline;
+  text-decoration-style: dotted;
+}
+
+button:enabled:hover,
+.button:not([aria-disabled="true"]):hover,
+input[type="submit"]:enabled:hover,
+input[type="reset"]:enabled:hover,
+input[type="button"]:enabled:hover {
+  background-color: var(--primary);
+  border-color: var(--secondary);
+  cursor: pointer;
+}
+
+.button:focus-visible,
+button:focus-visible:where(:enabled),
+input:enabled:focus-visible:where(
+  [type="submit"],
+  [type="reset"],
+  [type="button"]
+) {
+  outline: 2px solid var(--tertiary);
+  outline-offset: 1px;
+}
+
+article, fieldset, dialog {
+  border: 1px solid var(--border-colour);
+  padding: 1rem;
+  border-radius: var(--standard-border-radius);
+  margin-bottom: 1rem;
 }
