@@ -47,6 +47,8 @@
 
   /* Component Tokens */
   --disabled: var(--sys-color-darkgrey);
+  --text-box-bg: var(--sys-color-white);
+  --text-box-fg: var(--sys-color-black);
 
   --standard-border-radius: 0px;
 
@@ -61,6 +63,8 @@
     --secondary: var(--sys-color-white);
     --tertiary: var(--sys-color-darkgrey);
     --disabled: var(--sys-color-grey);
+    --text-box-bg: var(--sys-color-white);
+    --text-box-fg: var(--sys-color-black);
   }
 }
 
@@ -411,9 +415,9 @@ button,
 textarea,
 select,
 input {
-  color: var(--secondary);
-  background-color: var(--secondary);
-  border: 0px;
+  color: var(--text-box-fg);
+  background-color: var(--text-box-bg);
+  border: 1px solid var(--secondary);
 }
 label {
   display: block;
