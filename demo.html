@@ -8,6 +8,7 @@
 
   <body>
     <h1>Welcome</h1>
+    <button id="theme-toggle">Toggle Theme</button>
     <p>
       I was struggling to make a simple page I was building look decent. I knew there were stylesheets just used
       'semantic html' (like Tufte) and didn't require any special className (i.e
@@ -181,4 +182,46 @@
       </tbody>
     </table>
   </body>
+
+
+  <script>
+    const toggleButton = document.getElementById('theme-toggle');
+    const userPreferenceKey = 'theme-preference';
+
+    // Set the theme based on user preference or system preference
+    function applyTheme(theme) {
+      if (theme === 'dark') {
+        document.documentElement.classList.add('dark');
+        document.documentElement.classList.remove('light');
+      } else if (theme === 'light') {
+        document.documentElement.classList.add('light');
+        document.documentElement.classList.remove('dark');
+      } else {
+        // Follow system preference
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        document.documentElement.classList.toggle('dark', prefersDark);
+        document.documentElement.classList.toggle('light', !prefersDark);
+      }
+    }
+
+    // Initialize theme
+    const savedTheme = localStorage.getItem(userPreferenceKey);
+    applyTheme(savedTheme);
+
+    // Toggle theme on button click
+    toggleButton.addEventListener('click', () => {
+      const currentTheme = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      applyTheme(newTheme);
+      localStorage.setItem(userPreferenceKey, newTheme);
+    });
+
+    // React to system preference changes
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+      if (!localStorage.getItem(userPreferenceKey)) {
+        applyTheme();
+      }
+    });
+  </script>
+
 </html>

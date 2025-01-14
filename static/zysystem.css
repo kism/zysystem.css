@@ -52,14 +52,31 @@
   background-attachment: fixed;
 }
 
+/* For the toggle */
+:root.light {
+  --primary: var(--sys-color-white);
+  --secondary: var(--sys-color-black);
+  --tertiary: var(--sys-color-grey);
+
+  /* Component Tokens */
+  --disabled: var(--sys-color-darkgrey);
+}
+
+:root.dark {
+  --primary: var(--sys-color-black);
+  --secondary: var(--sys-color-white);
+  --tertiary: var(--sys-color-darkgrey);
+
+  /* Component Tokens */
+  --disabled: var(--sys-color-grey);
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --primary: var(--sys-color-black);
     --secondary: var(--sys-color-white);
     --tertiary: var(--sys-color-darkgrey);
     --disabled: var(--sys-color-grey);
-    --text-box-bg: var(--sys-color-white);
-    --text-box-fg: var(--sys-color-black);
   }
 }
 
