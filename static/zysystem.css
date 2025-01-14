@@ -524,7 +524,7 @@ progress:indeterminate {
 
 progress::-webkit-progress-bar {
   border-radius: var(--standard-border-radius);
-  background-color: var(--primary);
+  background-color: var(--tertiary);
 }
 
 progress::-webkit-progress-value {
@@ -540,7 +540,7 @@ progress::-moz-progress-bar {
 }
 
 progress:indeterminate::-moz-progress-bar {
-  background-color: var(--secondary);
+  background-color: var(--tertiary);
 }
 
 /* Format links & buttons */
