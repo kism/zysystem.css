@@ -81,11 +81,11 @@
   }
 }
 
-@media screen and (width <= 430px) {
+@media screen and (width <= 800px) {
   body {
     padding-left: 4px !important;
     padding-right: 4px !important;
-    /* margin: 0 auto !important; */
+    margin: 15px !important;
   }
 }
 
