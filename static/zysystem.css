@@ -81,10 +81,20 @@
   }
 }
 
-@media screen and (width <= 800px) {
+@media screen and (width <= 450px) {
   body {
-    padding-left: 4px !important;
-    padding-right: 4px !important;
+    padding-left: 5px !important;
+    padding-right: 5px !important;
+    margin: 0 !important;
+    box-shadow: none !important;
+    border: none !important;
+  }
+}
+
+@media screen and (800px > width > 450px) {
+  body {
+    padding-left: 5px !important;
+    padding-right: 5px !important;
     margin: 15px !important;
   }
 }
