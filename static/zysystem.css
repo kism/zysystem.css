@@ -504,6 +504,17 @@ input:focus {
   outline: none;
 }
 
+.button[aria-disabled="true"],
+input:disabled,
+textarea:disabled,
+select:disabled,
+button[disabled] {
+  cursor: not-allowed;
+  background-color: var(--disabled);
+  border-color: var(--disabled);
+  color: var(--primary);
+}
+
 textarea:not([cols]) {
   width: 100%;
 }
@@ -553,16 +564,7 @@ progress:indeterminate::-moz-progress-bar {
   background-color: var(--tertiary);
 }
 
-/* Format links & buttons */
-a,
-a:visited {
-  color: var(--accent);
-}
-
-a:hover {
-  text-decoration: none;
-}
-
+/* Format buttons */
 button,
 .button,
 a.button, /* extra specificity to override a */
@@ -577,17 +579,6 @@ input[type="button"] {
   line-height: normal;
 }
 
-.button[aria-disabled="true"],
-input:disabled,
-textarea:disabled,
-select:disabled,
-button[disabled] {
-  cursor: not-allowed;
-  background-color: var(--disabled);
-  border-color: var(--disabled);
-  color: var(--primary);
-}
-
 input[type="range"] {
   padding: 0;
 }
@@ -599,6 +590,13 @@ abbr[title] {
   text-decoration-style: dotted;
 }
 
+.button:focus-visible,
+button:focus-visible:where(:enabled),
+input:enabled:focus-visible:where([type="submit"], [type="reset"], [type="button"]) {
+  outline: 2px solid var(--tertiary);
+  outline-offset: 1px;
+}
+
 button:enabled:hover,
 .button:not([aria-disabled="true"]):hover,
 input[type="submit"]:enabled:hover,
@@ -607,13 +605,6 @@ input[type="button"]:enabled:hover {
   background-color: var(--primary);
   border-color: var(--secondary);
   cursor: pointer;
-}
-
-.button:focus-visible,
-button:focus-visible:where(:enabled),
-input:enabled:focus-visible:where([type="submit"], [type="reset"], [type="button"]) {
-  outline: 2px solid var(--tertiary);
-  outline-offset: 1px;
 }
 
 article,
