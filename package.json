@@ -1,9 +1,8 @@
 {
   "name": "zy.css",
   "version": "1.0.0",
-  "main": "index.js",
+  "packageManager": "bun@1.4.0",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "stylelint 'static/*.css'"
   },
   "repository": {
