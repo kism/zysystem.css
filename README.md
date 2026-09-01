@@ -1,5 +1,8 @@
 # zy.css
 
+[![Build](https://github.com/kism/zysystem.css/actions/workflows/build.yml/badge.svg)](https://github.com/kism/zysystem.css/actions/workflows/build.yml)
+[![Stylelint](https://github.com/kism/zysystem.css/actions/workflows/stylelint.yml/badge.svg)](https://github.com/kism/zysystem.css/actions/workflows/stylelint.yml)
+
 Kieran's minimal and almost classless CSS, based on system.css
 
 Demo: <https://kism.github.io/zysystem.css/demo.html>
